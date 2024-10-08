@@ -2,9 +2,11 @@ version: '3.3'
 
 services:
   learn_postgresql:
-    build:
-      context: .
-      dockerfile: Dockerfile
+# 不要每次都build,使用已经build好了的镜像
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+    image: release.daocloud.io/demo/standalone_learn_postgresql:latest
     hostname: 'learn_postgresql'
     ports:
       - '65001:5432'

@@ -59,7 +59,8 @@ fi
 
 # now build the container
 DOCKER_CONTAINER_NAME=${DOCKER_IMAGE_TO_RUN}_learn_postgresql_1
-$SUDO $DOCKER_COMPOSE build --force-rm --no-cache
+# 不要每次都build
+#$SUDO $DOCKER_COMPOSE build --force-rm --no-cache
 $SUDO $DOCKER_COMPOSE up -d --remove-orphans
 
 if [ $? -ne 0 ]; then
